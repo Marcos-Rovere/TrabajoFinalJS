@@ -3,17 +3,25 @@ var divParticular =  document.getElementById("divParticular")
 var divDependencia = document.getElementById("divDependencia")
 var divMonotributo = document.getElementById("divMonotributo")
 
-let animacionPlan = document.querySelectorAll(".Imagen_Introduccion")
+let animacionesPlan = document.getElementsByClassName("Imagen_Introduccion")
 
 function MostrarScroll (){
-    let scrolltop = document.documentElement.scrollTop;
-    for (var i=0; i < animacionPlan.length; i++){
-        let alturascroll = animacionPlan[i].offsetTop;
-        if (alturascroll - 550 < scrolltop){
-            animacionPlan[i].style.opacity = 1;
-            animacionPlan[i].classList.add("mostarPlanes")
+    const scrollTop = document.documentElement.scrollTop;
+    for(let index in animacionesPlan){
+        const alturaScrollReducida = animacionesPlan[index].offsetTop - 850;
+        if (alturaScrollReducida < scrollTop){
+            animacionesPlan[index].style.opacity = 1
+            animacionesPlan[index].classList.add("mostarPlanes")
         }
     }
+    // for (var i=0; i < animacionesPlan.length; i++){
+    //     let alturascroll = animacionesPlan[i].offsetTop;       
+    //     if (alturascroll - 550 < scrollTop){
+    //         animacionesPlan[i].style.opacity = 1;
+    //         animacionesPlan[i].classList.add("mostarPlanes")
+    //     }
+    // }
+    
 }
 
 const guardarStorage = () => {
