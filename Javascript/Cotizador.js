@@ -49,7 +49,7 @@ function cotizarParticular(cotizacionParticular){
     resultado = calcularHijosParticular(hijosParticular)*resultado
     resultado = calcularDescuentoParticular(descuentoParticular)*resultado
     
-    return resultado
+    return resultado.toFixed()
 }
 function calcularPlanParticular(planParticular){
     var incrementoPlan
@@ -198,7 +198,7 @@ function cotizarMonotributo(cotizacionMonotributo){
         resultado = "No abona diferencia"
     }
     
-    return resultado
+    return resultado.toFixed()
 }
 function calcularPlanMonotributo(planMonotributo){
     var incrementoPlan
@@ -326,7 +326,7 @@ const cotizarPlanDependencia=()=> {
             <li>Hijos: ${mayuscula(hijosDependencia)}</li>
         </ul>`;
         let cotizacionFinalDependencia = cotizarDependencia(cotizacionDependencia);
-        divResultado.style.display="block";
+        divResultadoDependencia.style.display="block";
         divResultadoDependencia.className="divResultado"
         divResultadoDependencia.innerHTML=`<p class="textoCotizacion">$ ${cotizacionFinalDependencia} </p>`;
     },1500);
@@ -346,7 +346,7 @@ function cotizarDependencia(cotizacionDependencia){
         resultado = "No abona diferencia"
     }
     
-    return resultado
+    return resultado.toFixed()
 }
 function calcularPlanDependencia(planDependencia){
     var incrementoPlan
